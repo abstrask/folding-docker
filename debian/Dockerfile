@@ -7,7 +7,7 @@ ENV FAH_VERSION_MAJOR=7.5
 # https://github.com/FoldingAtHome/fah-issues/issues/1246
 RUN apt-get update &&\
     apt-get install --no-install-recommends -y wget ocl-icd-opencl-dev &&\
-    wget https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v${FAH_VERSION_MAJOR}/fahclient_${FAH_VERSION_MINOR}_amd64.deb &&\
+    wget --no-check-certificate https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v${FAH_VERSION_MAJOR}/fahclient_${FAH_VERSION_MINOR}_amd64.deb &&\
     apt-get remove -y wget &&\
     apt-get autoremove -y &&\
     dpkg -x fahclient_${FAH_VERSION_MINOR}_amd64.deb / &&\
